@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace MauiAppHotel.Models
+{
+    public class Hospedagem
+    {
+        Quarto quarto_selecionado = new();
+
+        public Quarto QuartoSelecionado { 
+            get => quarto_selecionado;
+            set 
+            { 
+                if(value == null)
+                {
+                    throw new Exception("Selecione um quarto.");
+                }
+
+                QuartoSelecionado = value;
+            } 
+        }
+        public int QntAdultos { get; set; }
+        public int QntCriancas { get; set; }
+        public DateTime DataCheckIn { get; set; }
+        public DateTime DataCheckOut { get; set; }
+        public int Estadia { get; set; }
+        public double ValorTotal {
+            get
+            {
+                double valor_adultos = QntAdultos * QuartoSelecionado.ValorDiariaAulto;
+                double valor_criancas = QntCriancas * QuartoSelecionado.ValorDiariaCrianca;
+
+                double valor_total = (valor_adultos + valor_criancas) * Estadia;
+
+                return valor_total;
+            }
+        }
+        
+    }
+}
