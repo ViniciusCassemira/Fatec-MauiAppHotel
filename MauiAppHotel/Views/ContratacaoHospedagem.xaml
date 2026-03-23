@@ -6,7 +6,7 @@
     
     <!-- Container Geral da tela -->
     <VerticalStackLayout Padding="10" Spacing="10">
-        <Label Text="Cálculo da Diária" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Label Text="Cálculo da Diária" HorizontalOptions="Center" VerticalOptions="Center" FontFamily="DancingScript" FontSize="30"/>
 
         <!-- Container das quantidades de pessoas -->
         <Border Padding="10">

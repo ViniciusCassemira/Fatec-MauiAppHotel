@@ -6,4 +6,9 @@ public partial class HospedagemContratada : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    async private void Button_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

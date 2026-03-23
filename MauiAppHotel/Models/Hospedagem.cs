@@ -17,14 +17,24 @@ namespace MauiAppHotel.Models
                     throw new Exception("Selecione um quarto.");
                 }
 
-                QuartoSelecionado = value;
+                quarto_selecionado = value;
             } 
         }
         public int QntAdultos { get; set; }
         public int QntCriancas { get; set; }
         public DateTime DataCheckIn { get; set; }
         public DateTime DataCheckOut { get; set; }
-        public int Estadia { get; set; }
+        public int Estadia
+        {
+            get
+            {
+                return DataCheckOut.Subtract(DataCheckIn).Days;
+                //return (DataCheckOut - DataCheckIn).Days;
+            }
+
+            //get => (DataCheckOut - DataCheckIn).Days;
+
+        }
         public double ValorTotal {
             get
             {
