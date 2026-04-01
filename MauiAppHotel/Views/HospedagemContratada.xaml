@@ -51,6 +51,7 @@
             </HorizontalStackLayout>
         </Border>
         <Button Text="Voltar" Clicked="Button_Clicked" />
+        <Button Text="Avançar" Clicked="Button_Clicked_Avancar" />
 
     </VerticalStackLayout>
 </ContentPage>

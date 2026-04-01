@@ -8,6 +8,8 @@
     <VerticalStackLayout Padding="10" Spacing="10">
         <Label Text="Cálculo da Diária" HorizontalOptions="Center" VerticalOptions="Center" FontFamily="DancingScript" FontSize="30"/>
 
+        <Label x:Name="usuario_logado"/>
+
         <!-- Container das quantidades de pessoas -->
         <Border Padding="10">
 
@@ -42,21 +44,17 @@
                 <Border Padding="10">
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Período de Estadia" />
-                        <HorizontalStackLayout>
-                            <Label Text="Check-in:" />
-                            <DatePicker x:Name="dtpck_checkin" DateSelected="dtpck_checkin_DateSelected" Format="dd/MM/yyyy" />
-                        </HorizontalStackLayout>
+                        
+                        <Label Text="Check-in:" />
+                        <DatePicker x:Name="dtpck_checkin" DateSelected="dtpck_checkin_DateSelected" Format="dd/MM/yyyy" />
 
-                        <HorizontalStackLayout>
-                            <Label Text="Check-out:" />
-                            <DatePicker x:Name="dtpck_checkout" Format="dd/MM/yyyy" />
-                        </HorizontalStackLayout>
+                        <Label Text="Check-out:" />
+                        <DatePicker x:Name="dtpck_checkout" Format="dd/MM/yyyy" />
                     </VerticalStackLayout>
                 </Border>
             </VerticalStackLayout> 
         </Border>
 
         <Button Text="Calcular valor" Clicked="Button_Clicked"/>
-
     </VerticalStackLayout>
 </ContentPage>

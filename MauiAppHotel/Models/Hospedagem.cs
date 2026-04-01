@@ -6,8 +6,10 @@ namespace MauiAppHotel.Models
 {
     public class Hospedagem
     {
+        // Campo onde os dados estão guardados
         Quarto quarto_selecionado = new();
 
+        // Propriedades para acessar os dados
         public Quarto QuartoSelecionado { 
             get => quarto_selecionado;
             set 
