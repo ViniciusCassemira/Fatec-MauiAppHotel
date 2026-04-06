@@ -8,7 +8,8 @@
     <VerticalStackLayout Padding="10" Spacing="10">
         <Label Text="Cálculo da Diária" HorizontalOptions="Center" VerticalOptions="Center" FontFamily="DancingScript" FontSize="30"/>
 
-        <Label x:Name="usuario_logado"/>
+        <Label x:Name="usuario_logado" IsVisible="False"/>
+        <Button x:Name="btn_sair" Text="Deslogar" Clicked="btn_sair_Clicked" IsVisible="False"/>
 
         <!-- Container das quantidades de pessoas -->
         <Border Padding="10">

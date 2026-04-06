@@ -34,6 +34,10 @@ public partial class LoginUsuario : ContentPage
             }
 
         }
+        catch(ArgumentNullException ex)
+        {
+            await DisplayAlertAsync("Ops", "Você não preencheu o display alert direito", "Ok");
+        }
         catch (Exception ex)
         {
             await DisplayAlertAsync("Ops", ex.Message, "Ok");

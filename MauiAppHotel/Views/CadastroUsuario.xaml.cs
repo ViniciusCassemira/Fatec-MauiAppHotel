@@ -24,7 +24,7 @@ public partial class CadastroUsuario : ContentPage
 			bool retorno_consulta_email = App.lista_usuarios.Any(i => (i.Email == usuario.Email));
 
 
-            if (!retorno_consulta_email)
+            if (retorno_consulta_email)
 			{
                 throw new Exception("Erro ao criar cadastro, tente novamente");
             }

@@ -44,7 +44,14 @@ public partial class ContratacaoHospedagem : ContentPage
 
     protected override async void OnAppearing()
     {
-        usuario_logado.Text = await SecureStorage.Default.GetAsync("nome_usuario");
+        string? nome_usuario = await SecureStorage.Default.GetAsync("nome_usuario");
+
+        if(nome_usuario != null)
+        {
+            usuario_logado.IsVisible = true;
+            usuario_logado.Text = nome_usuario;
+            btn_sair.IsVisible = true;
+        }
     }
 
     private void dtpck_checkin_DateSelected(object sender, DateChangedEventArgs e)
@@ -55,6 +62,18 @@ public partial class ContratacaoHospedagem : ContentPage
 
         dtpck_checkout.MinimumDate = dtpck_checkin.Date.Value.AddDays(1);
         dtpck_checkout.MaximumDate = dtpck_checkin.Date.Value.AddMonths(2);
+    }
+
+    private async void btn_sair_Clicked(object sender, EventArgs e)
+    {
+        bool confirmacao = await DisplayAlertAsync("Tem certeza?", "Encerrar sessão", "Ok", "Cancelar");
+
+        if (confirmacao)
+        {
+            SecureStorage.Default.Remove("nome_usuario");
+            btn_sair.IsVisible = false;
+            usuario_logado.IsVisible = false;
+        }
     }
 
     private async void Button_Clicked(object sender, EventArgs e)
